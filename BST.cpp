@@ -14,26 +14,28 @@ public:
     }
 };
 
-node* createBt() {
+node* createBt(node* root) {
     cout << "Enter data : " << endl;
     int data;
     cin >> data;
-    
+    root = new node(data);
+
     if (data == -1) {
         return NULL;
     }
 
-    node* root = new node(data);
+    
 
     cout << "Enter data for inserting in left of " << data << endl;
-    root->left = createBt();
+    root->left = createBt(root->left);
     cout << "Enter data for inserting in right of " << data << endl;
-    root->right = createBt();
+    root->right = createBt(root->right);
 
     return root;
 }
 
 int main() {
-    node* root = createBt();
+    node* root = NULL;
+    root = createBt(root);
     return 0;
 }
