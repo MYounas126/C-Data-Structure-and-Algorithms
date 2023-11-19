@@ -1,4 +1,5 @@
 #include<iostream>
+#include<queue>
 using namespace std;
 
 class node {
@@ -34,8 +35,36 @@ node* createBt(node* root) {
     return root;
 }
 
+void levelOrderTraversal(node* root){
+    if (root == NULL) return;
+
+    queue<node*> q;
+    q.push(root);
+    q.push(NULL);
+
+    while (!q.empty()) {
+        node* temp = q.front();
+        q.pop();
+
+        if (temp == NULL) {
+            if (!q.empty()) {
+                q.push(NULL);
+            }
+        } else {
+            cout << temp->data << " ";
+            if (temp->left) {
+                q.push(temp->left);
+            }
+            if (temp->right) {
+                q.push(temp->right);
+            }
+        }
+    }
+}
+
 int main() {
     node* root = NULL;
     root = createBt(root);
+    levelOrderTraversal(root);
     return 0;
 }
