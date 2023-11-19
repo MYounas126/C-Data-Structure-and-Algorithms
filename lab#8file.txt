@@ -1,0 +1,43 @@
+LAB TASK#8
+
+Lab Task: Deleting a Node from a Binary Search Tree (BST)
+
+Objective:
+In this lab task, you will implement the deletion operation for a single node in a Binary Search
+Tree (BST). You will write a function that can delete a specified node from the BST while
+maintaining its binary search tree property.
+
+
+Instructions:
+1. Understanding Binary Search Tree (BST):
+- Concept of BST has already been introduced in the class and also in the lab session
+2. Implementing the BST Node Structure:
+- Define a structure/class for a BST node, including the necessary attributes (e.g., value, left
+child, right child).
+- Implement any helper functions required for node creation and initialization.
+3. Implementing the BST Deletion Function:
+- Write a function called `deleteNode(root, value)` that takes the root node of the BST and the
+value of the node to be deleted as input parameters.
+- Handle the following cases for node deletion:
+- Case 1: Deleting a leaf node (a node with no children).
+- Case 2: Deleting a node with a single child.
+- Case 3: Deleting a node with two children.
+- Ensure that the BST property is maintained after the deletion operation.
+4. Testing the Delete Operation:
+- Create a sample BST with a few nodes, ensuring that it satisfies the BST property.
+- Test your `deleteNode()` function by deleting various nodes from the BST, including leaf
+nodes, nodes with a single child, and nodes with two children.
+- Verify that the resulting BST remains valid and maintains the binary search tree property.
+6. Optional Enhancements (Extra Credit):
+- Implement additional functions to perform other operations on the BST, such as finding the
+minimum/maximum value, finding the successor/predecessor of a node, or performing an
+in-order traversal.
+
+
+- Creating insert_node() and display() tree functions. You can also do this manually but writing
+proper functions will lead to extra marks or credit.
+
+
+Submission Guidelines:
+- Write a clear and well-structured code implementation for the `deleteNode()` function.
+- Provide comments and explanations where necessary to improve code readability.
