@@ -390,6 +390,14 @@ node* findlca6(node *root,int n1,int n2)
         return findlca6(root->right,n1,n2);
     return root;
 }
+/**
+ * @brief The main function of the program.
+ * 
+ * This function creates a complete binary search tree based on user input, performs various tree operations,
+ * and displays the results.
+ * 
+ * @return int The exit status of the program.
+ */
 int main(){
 
     node *root=NULL;
@@ -408,7 +416,8 @@ int main(){
     {
         cout<<current->data<<" ";
         current=current->right;
-    }    
+    }
+    cout<<endl;    
     cout<<"Inorder traversal: ";
     inorder(root);
     cout<<endl;
