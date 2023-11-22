@@ -393,56 +393,91 @@ node* findlca6(node *root,int n1,int n2)
 int main(){
 
     node *root=NULL;
-    root=insert(root,15);
-    root=insert(root,10);
-    root=insert(root,20);
-    root=insert(root,8);
-    root=insert(root,12);
-    root=insert(root,17);
-    root=insert(root,25);
-    root=insert(root,11);
-    root=insert(root,16);
-    root=insert(root,27);
-    root=insert(root,9);
-    root=insert(root,14);
-    root=insert(root,26);
-    root=insert(root,28);
-    root=insert(root,13);
-    root=insert(root,7);
-    root=insert(root,6);
-    root=insert(root,5);
-    root=insert(root,4);
-    root=insert(root,3);
-    root=insert(root,2);
-    root=insert(root,1);
-    root=insert(root,0);
-    root=insert(root,-1);
-    root=insert(root,-2);
-    root=insert(root,-3);
-    root=insert(root,-4);
-    root=insert(root,-5);
-    root=insert(root,-6);
-    root=insert(root,-7);
-    root=insert(root,-8);
-    root=insert(root,-9);
-    root=insert(root,-10);
-    root=insert(root,-11);
-    root=insert(root,-12);
-    root=insert(root,-13);
-    root=insert(root,-14);
-    root=insert(root,-15);
-    root=insert(root,-16);
-    root=insert(root,-17);
-    root=insert(root,-18);
-    root=insert(root,-19);
-    root=insert(root,-20);
-    root=insert(root,-21);
-    root=insert(root,-22);
-    root=insert(root,-23);
-    root=insert(root,-24);
-    root=insert(root,-25);
-    root=insert(root,-26);
-    root=insert(root,-27);
-    root=insert(root,-28);
-    root=insert(root,-29);
+    cout<<"Enter the number of nodes in the tree: ";
+    int n;
+    cin>>n;
+    cout<<"Enter the nodes: ";
+    for(int i=0;i<n;i++)
+    {
+        int data;
+        cin>>data;
+        root=insert(root,data);
+    }
+    node *current=root;
+    while (current!=NULL)
+    {
+        cout<<current->data<<" ";
+        current=current->right;
+    }    
+    cout<<"Inorder traversal: ";
+    inorder(root);
+    cout<<endl;
+    cout<<"Preorder traversal: ";
+    preorder(root);
+    cout<<endl;
+    cout<<"Postorder traversal: ";
+    postorder(root);
+    cout<<endl;
+    cout<<"Levelorder traversal: ";
+    levelorder(root);
+    cout<<endl;
+    cout<<"Enter the node to be searched: ";
+    int data;
+    cin>>data;
+    node *temp=search(root,data);
+    if(temp==NULL)
+        cout<<"Node not found"<<endl;
+    else
+        cout<<"Node found"<<endl;
+    cout<<"Enter the node to be deleted: ";
+    cin>>data;
+    root=del(root,data);
+    cout<<"Inorder traversal: ";
+    inorder(root);
+    cout<<endl;
+    cout<<"Enter the node whose successor is to be found: ";
+    cin>>data;
+    node *temp1=successor(root,data);
+    if(temp1==NULL)
+        cout<<"No successor"<<endl;
+    else
+        cout<<"Successor: "<<temp1->data<<endl;
+    cout<<"Enter the node whose predecessor is to be found: ";
+    cin>>data;
+    node *temp2=predecessor(root,data);
+    if(temp2==NULL)
+        cout<<"No predecessor"<<endl;
+    else
+        cout<<"Predecessor: "<<temp2->data<<endl;
+    cout<<"Enter the nodes whose lca is to be found: ";
+    int n1,n2;
+    cin>>n1>>n2;
+    node *temp3=lca(root,n1,n2);
+    if(temp3==NULL)
+        cout<<"No lca"<<endl;
+    else
+        cout<<"Lca: "<<temp3->data<<endl;
+    cout<<"Mirror image of the tree: ";
+    root=mirror(root);
+    inorder(root);
+    cout<<endl;
+    cout<<"Copy of the tree: ";
+    node *root1=copy(root);
+    inorder(root1);
+    cout<<endl;
+    cout<<"Enter the node to be searched: ";
+    cin>>data;
+    node *temp4=find(root,data);
+    if(temp4==NULL)
+        cout<<"Node not found"<<endl;
+    else
+        cout<<"Node found"<<endl;
+    cout<<"Enter the nodes whose lca is to be found: ";
+    cin>>n1>>n2;
+    node *temp5=findlca(root,n1,n2);
+    if(temp5==NULL)
+        cout<<"No lca"<<endl;
+    else
+        cout<<"Lca: "<<temp5->data<<endl;
+    
 }
